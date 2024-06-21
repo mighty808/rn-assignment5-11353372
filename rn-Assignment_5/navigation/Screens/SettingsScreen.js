@@ -1,12 +1,22 @@
-import * as React from 'react';
-import { View, Text } from 'react-native';
+import Header from '../../components/Header';
 
-export default function SettingsScreen({ navigation }) {
+import { StyleSheet, View } from 'react-native';
+import Settings from '../../components/Settings';
+
+export default function HomeScreen({ navigation }) {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text
-                onPress={() => navigation.navigate('Home')}
-                style={{ fontSize: 26, fontWeight: 'bold' }}>Settings Screen</Text>
-        </View>
+      <View style={styles.container}>
+      <Header />
+      <Settings />
+      </View>
+        
     );
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#fff"
+  },
+
+});
