@@ -46,14 +46,15 @@ This project aims to recreate a mobile application design as seen in the provide
 ## Screenshots
 
 ### Light Mode
-
-![Light Mode Home](path/to/light-mode-home-screenshot.png)
-![Light Mode Settings](path/to/light-mode-settings-screenshot.png)
+![photo_6037182516215005165_y](https://github.com/mighty808/rn-assignment5-11353372/assets/142548335/5495427b-5f07-4b7a-ad59-7bb18a1cc338)
+![photo_6037182516215005166_y](https://github.com/mighty808/rn-assignment5-11353372/assets/142548335/fca82bdf-6c54-44f2-aa4d-b62a912d756f)
+![photo_6037182516215005167_y](https://github.com/mighty808/rn-assignment5-11353372/assets/142548335/71c791cb-adab-41cd-8dec-89047049c613)
 
 ### Dark Mode
+![photo_6037182516215005168_y](https://github.com/mighty808/rn-assignment5-11353372/assets/142548335/adc3be84-87cd-42a4-8393-3bdbebd772bb)
+![photo_6037182516215005169_y](https://github.com/mighty808/rn-assignment5-11353372/assets/142548335/b07d4f63-e6a3-4f2f-9889-297fe56f7329)
+![photo_6037182516215005170_y](https://github.com/mighty808/rn-assignment5-11353372/assets/142548335/45f6b60f-dac2-433d-b922-b92b18ded90d)
 
-![Dark Mode Home](path/to/dark-mode-home-screenshot.png)
-![Dark Mode Settings](path/to/dark-mode-settings-screenshot.png)
 
 ## Resources
 
