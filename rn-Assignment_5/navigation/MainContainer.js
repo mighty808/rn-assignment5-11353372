@@ -1,6 +1,8 @@
-import { NavigationContainer } from '@react-navigation/native';
+import React, { useContext } from 'react';
+import { NavigationContainer, DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { DarkModeProvider, DarkModeContext } from '../DarkModeContext';
 
 // Screens
 import HomeScreen from './Screens/HomeScreen';
@@ -8,17 +10,20 @@ import CardsScreen from './Screens/CardsScreen';
 import SettingsScreen from './Screens/SettingsScreen';
 import StatisticsScreen from './Screens/StatisticsScreen';
 
-//Screen names
+// Screen names
 const homeName = "Home";
 const cardsName = "Cards";
-const statisticsName = "Statitistcs";
+const statisticsName = "Statistics";
 const settingsName = "Settings";
 
 const Tab = createBottomTabNavigator();
 
 function MainContainer() {
+  const { isDarkMode } = useContext(DarkModeContext);
+  const MyTheme = isDarkMode ? DarkTheme : DefaultTheme;
+
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={MyTheme}>
       <Tab.Navigator
         initialRouteName={homeName}
         screenOptions={({ route }) => ({
@@ -28,19 +33,14 @@ function MainContainer() {
 
             if (rn === homeName) {
               iconName = focused ? 'home' : 'home-outline';
-
             } else if (rn === cardsName) {
               iconName = focused ? 'card' : 'card-outline';
-
-            } 
-            else if (rn === statisticsName) {
-                iconName = focused ? 'analytics' : 'analytics-outline';
-            }
-            else if (rn === settingsName) {
+            } else if (rn === statisticsName) {
+              iconName = focused ? 'analytics' : 'analytics-outline';
+            } else if (rn === settingsName) {
               iconName = focused ? 'settings' : 'settings-outline';
             }
 
-            // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
@@ -48,7 +48,7 @@ function MainContainer() {
           activeTintColor: 'tomato',
           inactiveTintColor: 'grey',
           labelStyle: { paddingBottom: 10, fontSize: 10 },
-          style: { padding: 10, height: 70}
+          style: { padding: 10, height: 70 }
         }}>
 
         <Tab.Screen name={homeName} component={HomeScreen} />
@@ -61,4 +61,10 @@ function MainContainer() {
   );
 }
 
-export default MainContainer;
+const AppWrapper = () => (
+  <DarkModeProvider>
+    <MainContainer />
+  </DarkModeProvider>
+);
+
+export default AppWrapper;
